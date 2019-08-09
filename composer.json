@@ -1,0 +1,24 @@
+{
+  "name": "thiagoprz/simple-role",
+  "description": "Laravel package to add a simple role based authentication system to any project",
+  "type": "library",
+  "require": {
+    "php": "7.1",
+    "laravel/framework": "5.5"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Thiago Przyczynski",
+      "email": "przyczynski@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Thiagoprz\\SimpleRole\\SimpleRoleServiceProvider"
+      ],
+    }
+  }
+}
