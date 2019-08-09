@@ -11,7 +11,7 @@ trait Enrollable
     /**
      * Adds role as a fillable attribute
      */
-    public function initializeEnrollble()
+    public function initializeEnrollable()
     {
         $this->fillable[] = 'role';
     }
