@@ -3,14 +3,33 @@
 
 Package that adds a simple role based authentication system to any Laravel project.
 
-**Installing**
+**Installing and using**
 -------------
 `composer require thiagoprz/simple-role`
 
 Run the migration that will add role column to your users table, as:
 `php artisan migrate`
 
-Add 'role' column to your fillable attributes on User model:
+>Add roles using Enrollable Trait
+
+```
+... 
+use Thiagoprz\SimpleRole\Enrollable;
+...
+class User ...
+{
+    Use Enrollable;
+    ...    
+}
+
+```
+This trait will add setRole($role) method to the User model and you will be able to update users role with it:
+
+`$user->setRole('admin')`
+
+>Add roles using Laravel standard attributes 
+
+If you don't want to use the Enrollable trait you can add 'role' column to your fillable attributes on User model:
 
 ``` 
 class User
@@ -24,8 +43,6 @@ class User
 
 ```
 
-**Usage**
--------------
 Define the different types of role that you will be working and use the middleware to be handle on your routes as shown above:
 
 
@@ -52,3 +69,6 @@ A route can require more than one role, to do that you just need to add comma se
 Route::get('product', 'ProductController')->middleware('role:admin,manager,employee');
 
 ```
+
+
+I'm aware of other packages that can do the same with more power allowing multiple roles and other stuff, but this package contains the simplest way of doing that  and will allow small projects to run a simple role based with a small footprint. 
