@@ -31,6 +31,9 @@ class SimpleRoleServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/migrations');
         // Adding the middleware to the RouteMiddleware section of the app
         $this->app['router']->middleware('role', SimpleRole::class);
+        $this->publishes([
+            __DIR__.'/config/simple-role.php' => config_path('simple-role.php'),
+        ]);
     }
 
 }
