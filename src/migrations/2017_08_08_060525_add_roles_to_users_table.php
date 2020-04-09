@@ -24,6 +24,8 @@ class AddRolesToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wiki_routes');
+        Schema::table(config('simple-role.users_table'), function (Blueprint $table) {
+            $table->dropColumn('role');
+        });
     }
 }
