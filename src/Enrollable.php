@@ -4,6 +4,7 @@ namespace Thiagoprz\SimpleRole;
 /**
  * Trait Enrollable
  * @package Thiagoprz\SimpleRole
+ * @property string $role
  */
 trait Enrollable
 {
@@ -17,13 +18,15 @@ trait Enrollable
     }
 
     /**
-     * Setting a role
+     * Sets a role
      *
      * @param string $role
+     * @return bool
      */
-    public function setRole(string $role)
+    public function setRole(string $role): bool
     {
-        $this->update(['role' => $role]);
+        $this->role = $role;
+        return $this->save();
     }
 
 }
