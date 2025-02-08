@@ -3,8 +3,8 @@
   "description": "Laravel package to add a simple role based authentication system to any project",
   "type": "library",
   "require": {
-    "php": "^7.4 || ^8.0 || ^8.1",
-    "laravel/framework": "^5.5||^7.0||^8.6||^9.0"
+    "php": ">=8.0",
+    "laravel/framework": "^8.6||^9.0||^10.0||^11.0"
   },
   "license": "MIT",
   "authors": [
